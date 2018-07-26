@@ -60,16 +60,15 @@ public class ShoppingList {
 
 		for (String fruit : shoppingCart) {
 
-			if (lowest < inventory.get(fruit)) {
+			if (lowest + 1 > inventory.get(fruit)) {
 				lowest = inventory.get(fruit);
 			}
 			// line 68 keeps printing twice and I don't know why.
 			// I went through the debugger and that did not show
 			// me why this line is printed twice
 			
-			System.out.println("The lowest priced item is $" + lowest);
 		}
-
+		System.out.println("The lowest priced item is $" + lowest);
 	}
 
 	private static void highest(ArrayList<String> shoppingCart, HashMap<String, Double> inventory) {
